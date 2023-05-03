@@ -62,27 +62,33 @@ class Tree:
             return self._find(data, node.right)
 
     def deleteTree(self):
-        # TODO 1
+        """Sterge arborele"""
         self.root = None
 
     def printTree(self):
-        # TODO 1
+        """afiseaza arborele"""
         if self.root is not None:
             self._printInorderTree(self.root)
 
     def _printInorderTree(self, node):
-        # TODO 1
+        """inorder"""
         if node is not None:
             self._printInorderTree(node.left)
             print(str(node.data) + ' ')
             self._printInorderTree(node.right)
 
     def _printPreorderTree(self, node):
-        # TODO 2
-        pass
+        """preorder"""
+        if node is not None:
+            print(str(node.data) + ' ')
+            self._printInorderTree(node.left)
+            self._printInorderTree(node.right)
 
     def _printPostorderTree(self, node):
-        # TODO 2
-        pass
+        """postorder"""
+        if node is not None:
+            self._printInorderTree(node.left)
+            self._printInorderTree(node.right)
+            print(str(node.data) + ' ')
 
 
